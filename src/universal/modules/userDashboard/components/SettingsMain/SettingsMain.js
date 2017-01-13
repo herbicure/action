@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 import Button from 'universal/components/Button/Button';
 import InputField from 'universal/components/InputField/InputField';
 import {Field} from 'redux-form';
@@ -28,9 +28,9 @@ const UserSettings = (props) => {
   return (
     <UserSettingsWrapper activeTab={SETTINGS}>
       <div className={css(styles.body)}>
-<form className={css(styles.root)} onSubmit={handleSubmit(onSubmit)}>
-        <div className={css(styles.row)}>
-          {renderActivity(activity)}
+        <form className={css(styles.root)} onSubmit={handleSubmit(onSubmit)}>
+          <div className={css(styles.row)}>
+            {renderActivity(activity)}
           </div>
           <div className={css(styles.row)}>
             <Avatar hasBadge={false} picture={picture} size="large"/>
@@ -42,7 +42,7 @@ const UserSettings = (props) => {
               previousValue={picture}
               type="file"
             />
-        </div>
+          </div>
           <div className={css(styles.row)}>
             <Field
               autoFocus
